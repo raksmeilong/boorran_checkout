@@ -1,0 +1,92 @@
+{
+  "name": "boorran-checkout",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "3.6.9",
+    "@emotion/react": "11.7.1",
+    "@emotion/styled": "11.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@googlemaps/react-wrapper": "1.1.34",
+    "@mui/icons-material": "5.2.4",
+    "@mui/material": "5.2.4",
+    "@mui/system": "5.2.4",
+    "@tailwindcss/forms": "^0.5.3",
+    "@testing-library/dom": "8.13.0",
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/user-event": "13.5.0",
+    "crypto-js": "^4.1.1",
+    "env-cmd": "10.1.0",
+    "fast-equals": "2.0.4",
+    "fetchier": "0.0.36",
+    "firebase": "9.6.1",
+    "graphql": "16.6.0",
+    "graphql-ws": "5.10.1",
+    "html-react-parser": "1.4.8",
+    "js-cookie": "3.0.1",
+    "libphonenumber-js": "1.10.18",
+    "lodash": "4.17.21",
+    "moment": "2.29.1",
+    "prop-types": "15.8.1",
+    "react": "17.0.2",
+    "react-component-export-image": "1.0.6",
+    "react-dom": "17.0.2",
+    "react-fast-marquee": "1.6.0",
+    "react-ga": "3.3.0",
+    "react-geocode": "0.2.3",
+    "react-google-autocomplete": "2.6.1",
+    "react-imask": "^7.1.2",
+    "react-infinite-scroll-component": "6.1.0",
+    "react-redux": "7.2.6",
+    "react-router-dom": "6.2.1",
+    "react-scripts": "5.0.0",
+    "redux": "4.1.2",
+    "redux-thunk": "2.4.1",
+    "seamless-immutable": "7.1.4",
+    "typescript": "4.7.2",
+    "web-vitals": "2.1.2",
+    "webpack": "5.72.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:prd": "./node_modules/.bin/env-cmd -f ./.env.prd --fallback react-scripts start",
+    "build": "firebase use default && set \"GENERATE_SOURCEMAP=false\" && react-scripts build && firebase deploy --only hosting:boorrancheckout",
+    "build:stag": "firebase use default && set \"GENERATE_SOURCEMAP=false\" && react-scripts build && firebase deploy --only hosting:boorran-checkout",
+    "build:stg": "GENERATE_SOURCEMAP=false REACT_APP_DEVELOPMENT=stg firebase use stg && react-scripts build && firebase deploy --only hosting",
+    "build:prd": "GENERATE_SOURCEMAP=false REACT_APP_DEVELOPMENT=default firebase use default && ./node_modules/.bin/env-cmd -f ./.env.prd --fallback react-scripts build && firebase deploy --only hosting:boorrancheckout",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "delete node_mod.": "rmdir /s node_modules && pnpm install",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "6.2.0",
+    "autoprefixer": "10.4.11",
+    "eslint": "8.45.0",
+    "postcss": "8.4.16",
+    "prettier": "3.0.0",
+    "tailwindcss": "3.1.8"
+  }
+}
